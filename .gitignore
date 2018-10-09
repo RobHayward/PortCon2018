@@ -35,3 +35,11 @@ vignettes/*.pdf
 # Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
 rsconnect/
 *.todo
+*.Rproj
+.Rproj.user
+*.RData
+*.rdb
+*.rdx
+*.sty
+*.pdf
+*cache*
