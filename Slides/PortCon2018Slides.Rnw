@@ -925,17 +925,6 @@ plot(da$x, da$XIV, type = 'l', xlab = "Date", main = "XIV ETF 2015 to Feb 2018",
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Concluding Thoughts}
-\begin{itemize}[<+-| alert@+>]
-		\item ETF are a revolution in finance 
-\begin{itemize}
-\item Cost, liquidity and flexibility
-\end{itemize}
-		\item Some of the long-term effects on liquidity, corporate governance and price discovery are as yet unclear
-		\item The evolution that targets factors in fixed income and areas of ESG re-blurs the lines between active and passive investment
-	\end{itemize}
-\end{frame}
-
 \section{Factor investment}
 \section{Smart beta}
 \begin{frame}{Criticisms of index investment}
@@ -1263,9 +1252,11 @@ These are for government and corporate sectors
 Though lagging equities, increased money has been drawn into bond ETFs this year.  According to Morningstar 
 \begin{itemize}[<+-| alert@+>]
 \pause
-\item Bond ETFs attracted over \$140bn in 2017 
-\item This is more than the record \$117bn that was recorded in 2016
-\item In the environment of very low rates, there is particular interest in floating rate, short maturity and emerging market bond ETFs
+\item Bond ETFs atttracted \$66.8bn of new business in the first 6 months of 2018 (ETFGI)
+\item Bond ETFs attracted \$142bn in 2017 (\$117bn in 2016) 
+\item Rising rate environment is challenging
+\item There remains interest in floating rate, short maturity and emerging market bond ETFs
+\item High yield bonds are less attractive
 \end{itemize}
 \end{frame}
 
@@ -1642,32 +1633,6 @@ Where $ERP$ is the equity risk premium; $R_e$ is the return on equity; $R_fr$ is
 %\end{frame}
 %
 \begin{frame}{ESG}
-	There has been increased attention to Environmental, Social and Governance issues in the investment community.  This appears to come from three main sources
-	\pause 
-\begin{itemize}[<+-| alert@+>]
-	\item Increased evidence that rather than returns vs ethics, ESG factors may help to improve performance
-	\item Experience of ESG-related losses
-		\begin{itemize}
-			\item Banking and GFC
-			\item BP and Deepwater Horizon
-			\item Volkswagen emissions
-		\end{itemize}
-	\item Perception that \emph{millennials} will have a much greater focus on ESG issues as they become more prominent in the investment industry
-\end{itemize}
-\end{frame}
-
-\begin{frame}{ESG}
-	There are three main aspects of Environmental, Social and Governance investment
-\begin{itemize}[<+-| alert@+>]
-	\pause
-\item Screening for companies that may face difficulties
-\item Positively identifying companies that have qualities that will help them to outperform
-\item Active involvement in companies to change the way that they behave
-\end{itemize}
-\end{frame}
-
-
-\begin{frame}{ESG}
 Environmental, social and governance
 \begin{itemize}[<+-| alert@+>]
 \pause
@@ -1692,11 +1657,109 @@ Environmental, social and governance
 	\end{block}
 \end{frame}
 
+\begin{frame}{ESG}
+	There has been increased attention to Environmental, Social and Governance issues in the investment community.  This appears to come from three main sources
+	\pause 
+\begin{itemize}[<+-| alert@+>]
+	\item Increased evidence that rather than returns vs ethics, ESG factors may help to improve performance
+	\item Experience of ESG-related losses
+		\begin{itemize}
+			\item Banking and GFC
+			\item BP and Deepwater Horizon
+			\item Volkswagen emissions
+		\end{itemize}
+	\item Perception that \emph{millennials} will have a much greater focus on ESG issues as they become more prominent in the investment industry
+\end{itemize}
+\end{frame}
+
+\begin{frame}{ESG}
+	There are three main aspects of Environmental, Social and Governance investment
+\begin{itemize}[<+-| alert@+>]
+	\pause
+\item Screening for companies that may face difficulties
+\item Positively identifying companies that have qualities that will help them to outperform
+\item Active involvement in companies to change the way that they behave
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Turbulence: climate}
+	Investors are paying increased attention to risks linked to fossile fuels
+	\pause
+\begin{itemize}[<+-| alert@+>]
+	\item Which companies benefit from changes in regulation and consumer demand
+	\item BlackRock, BNP Paribas and StateStree have ETF that hold low-carbon footprint companies
+	\item Many funds also look forward to those firms that will benefit in the future
+	\item Risk reduction and opportunity
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Green bonds}
+	These are bonds where the proceeds will be used to transition towards a more sustainable business models
+	\pause
+\begin{itemize}[<+-| alert@+>]
+	\item Green bond sales rose by 7\% in the first half of 2018 to \$77bn
+	\item International Capital Market Association (ISMA) has set out some guidelines for bonds that can be labelled \emph{green}
+		\begin{itemize}
+			\item use of proceeds
+			\item process for project evaluation
+			\item management of proceeds 
+			\item reporting
+		\end{itemize}
+	\item The Climate Bond Initiative: certify, advise and promote
+	\item There is increased competition from the issuance of social uses of funds
+	\item Issuance can create a conversation within companies
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Green bond uses}
+	ISMA sets out the projects that can be considered as the \emph{Five High Level Environmental Objectives}
+	\pause
+\begin{itemize}[<+-| alert@+>]
+	\item Climate change mitigation
+	\item Climate change adaption
+	\item Natural Resource conservation
+	\item Biodiversity conservation 
+	\item Pollution prevention and control
+\end{itemize}
+\end{frame}
+
+\begin{frame}{ESG Challenges}
+	There are a number of challenges with ESG
+	\pause
+\begin{itemize}[<+-| alert@+>]
+	\item How do passive investors justify their non-ESG exposure?
+	\item Can \emph{active engagement} provide an offset or are there political constraints?
+	\item Who will win the battles to categorise and certificate?
+	\item Do ESG factors hide other factors?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Do ESG factors hide other factors?}
+	DWS study of the effect of ESG factors (DWS SynRating) on MSCI Global exposure
+	\pause
+\begin{itemize}[<+-| alert@+>]
+	\item Of course, reduced exposure to oil, tobacco and others
+	\item Increased exposure to European companies
+	\item Less exposure to USD
+	\item High exposure to large caps, low vol
+\end{itemize}
+\pause
+There are trade-offs between exposure, returns and tracking errors
+\end{frame}
+
 \section{Portfolio construction: decision-making}
 \begin{frame}{Norwegian Petroleum Fund}
 \begin{center}
 \includegraphics[height = 3.0in]{Flag_Norway}
 \end{center}
+\end{frame}
+
+\begin{frame}{Marketing?}
+	Thomas Hale, \emph{Someone is wrong on the internet}, FT
+	\pause
+	\begin{block}{}
+		The better explanation for the suggested relationship between higher returns and social responsibility is simple: it is a marketing strategy. This not only helps to attract inflows, but it helps to create demand for green assets that may not previously have existed.
+	\end{block}
 \end{frame}
 
 \begin{frame}{Norwegian Petroleum Fund}
@@ -1844,6 +1907,17 @@ Ang, Goetzmann and Schaefer (2009) find the following factors explain the active
 \node at (2, 0) [align = center] {\scriptsize Adapted from \\ \scriptsize Ang, Brandt, Denison (2014)};
 \end{tikzpicture}
 \end{frame} 
+
+\begin{frame}{Concluding Thoughts}
+\begin{itemize}[<+-| alert@+>]
+		\item ETF are a revolution in finance 
+\begin{itemize}
+\item Cost, liquidity and flexibility
+\end{itemize}
+		\item Some of the long-term effects on liquidity, corporate governance and price discovery are as yet unclear
+		\item The evolution that targets factors in fixed income and areas of ESG re-blurs the lines between active and passive investment
+	\end{itemize}
+\end{frame}
 
 %\begin{frame}{Final Thoughts}
 %	International investment involves asset owners making decisions about
