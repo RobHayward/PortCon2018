@@ -242,6 +242,10 @@ legend('topleft', legend = c('Skew', 'Normal'), col = c('black', 'darkgreen'), l
 \end{itemize}
 \end{frame}
 
+\begin{frame}{BoA: calm and crisis}
+	This will be a BoA chart with price and returns
+\end{frame}
+
 \begin{frame}{Mixture}
 <<mixture, fig.height=4.6, echo=FALSE, warning=FALSE>>=
 x <- seq(-3, 3, 0.1)
@@ -289,6 +293,10 @@ The Efficient Market Hypothesis
 \item There are no \emph{systematic} deviations that allow \emph{supernormal profits} or returns that are more than just compensation for risk
 \item Suggests that any inefficiencies will be swiftly eliminated
 \item Are the anomalies or effects (value, growth etc) inefficiencies or risk factors? 
+	\begin{itemize}
+		\item think we have an anomaly but it is really risk
+		\item know we can bear risk so we can get more return
+	\end{itemize}
 \end{itemize}
 \end{frame}
 
@@ -359,10 +367,12 @@ VWO & Vanguard Emerging & 58b & 13m\\
 \end{tabular}
 \end{center}
 \end{table}
-June 2019
+June 2018
 \end{frame}
 
 \begin{frame}{Reasons for ETF growth}
+	Reasons for ETF growth
+	\pause
 \begin{itemize}[<+-| alert@+>]
 \item They are a response to increased doubts about the benefits of active fund management
 \begin{itemize}
@@ -398,16 +408,16 @@ and Wermers (2011)
 			\item As an open-ended investment vehicle new shares can be created to ensure that ETF price is close to the Net Asset Value (NAV)
 			\item However, like closed-end funds, they can be traded continuously on the exchange rather that just at the end of the say like traditional open-ended funds
 			\item The structure means that dividends can be re-invested and shares can be lent to other institutions to enhance income
-		\begin{itemize} 
-		\item this is not the case with SPY which is set up as a mutual fund
-		\end{itemize}
+		%\begin{itemize} 
+		%\item this is not the case with SPY which is set up as a mutual fund
+		%\end{itemize}
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Other advantages}
 \begin{itemize}[<+-| alert@+>]
 	\item The basic model is easy to understand
-	\item They have expanded into sectors, international markets and a bewildering variety of new areas (see below)
+	\item They have expanded into international markets, industrial sectors and a bewildering variety of new areas (see below)
 	\item There can be a tax advantage
 	\item Costs are low
 	\item Cash drag is avoided
@@ -453,7 +463,7 @@ BOND&  Pimco active bond investment & 0.55\\
 	\item Synthetic ETF: the Authorised Participant will provide cash in exchange for shares
 		\begin{itemize}
 			\item the fund will use the money to purchase derivatives (usually swaps or futures) that will replicate the desired assets
-			\item arbitrage is more complex
+			\item structure is more complex but arbitrage may be easier
 			\item underlying assets are not held by the fund  
 		\end{itemize}
 \end{itemize}
@@ -520,20 +530,20 @@ For the physical ETF
 %\node at (6, 8) {Stage Two};
 %\node at (10, 8) {Stage Three};
 % main blocks
-\node at (6, 7) [block] {Swap Counterparty 1};  
+\node at (6, 7) [block] {Swap Counterparty};  
 \node at (1, 3.8) [block] {Authorised Participant};  
 \node at (10, 5) [shape1]{Collateral Basket};
 \node at (6, 3.8) [block] {ETF};  
-\node at (10, 1) [block] {Swap Counterparty 2};  
+%\node at (10, 1) [block] {Swap Counterparty 2};  
 \node at (6, 1) [block] {Retail and Institutional Investors};  
 \node at (1, 1) [block] {Exchange};  
 % the arrows
 % Interest rate swap
 \draw [arrow] (7.5, 4) -- node[below right, distance = 3cm] {Cash} (9, 5);
 \draw [arrow] (9, 5) -- node[above right] {Return on collateral} (7.5, 7);
-\draw [arrow] (6, 6.0) -- node[left] {Variable rate cash} (6, 4.8);
+%\draw [arrow] (6, 6.0) -- node[left] {Variable rate cash} (6, 4.8);
 % Creatiom units 
-\draw [arrow] (4.5, 4) -- node[above] {Index Return} (2.5, 4);
+%\draw [arrow] (4.5, 4) -- node[above] {Index Return} (2.5, 4);
 \draw [arrow] (2.5, 3.8) -- node[below] {Cash} (4.5, 3.8);
 % AP arbitrage
 \draw [arrow2] (1, 1.9) -- node[left] {Cash} (1, 2.8);
@@ -552,7 +562,7 @@ For the physical ETF
 \end{frame}
 %
 \begin{frame}{Other Assets: Bonds}
-	Bond  ETF have been established
+	Bond ETF have followed equities
 	\pause
 \begin{itemize}[<+-| alert@+>]
 	\item First bond ETF were produced in 2000 and were designed to follow Goldman Sachs and Lehman Brothers bond indices
@@ -566,10 +576,10 @@ For the physical ETF
 \end{frame}
 
 \begin{frame}{Other Assets: Commodities}
-	Commodity  ETF have been established
+	Commodity ETF are also popular
 	\pause
 \begin{itemize}[<+-| alert@+>]
-	\item These are generally synthetic ETF, using futures to gain exposure to the underlying assets
+	\item These are generally synthetic ETF due to the warehousing cost, using futures to gain exposure to the underlying assets
 	\item There has been concern expressed about the \emph{financialisation} of commodity markets
 	\item It has been suggested (though evidence is mixed) that this is partly the reason for the increase in commodity prices in the period 2000 - 2005
 	\item Currency ETF hold money market products
@@ -732,22 +742,22 @@ Ackert and Tian (2008)
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Observations 2}
-	There are a number of observations from this study:
-\begin{itemize}[<+-| alert@+>]
-		\pause
-	\item Emerging ETF have greater serial correlation than the developed markets
-	\item This may be partly asynchronous activity 
-		\begin{itemize}
-			\item but some markets are the same time zone - Mexico 
-			\item some correlations remain for three or four days
-		\end{itemize}
-	\item There may be \emph{liquidity spill-overs}
-		\begin{itemize}
-			\item demand for ETF creates need to create new units of the underlying, adding liquidity in that market
-		\end{itemize}
-\end{itemize}
-\end{frame}
+%\begin{frame}{Observations 2}
+%	There are a number of observations from this study:
+%\begin{itemize}[<+-| alert@+>]
+%		\pause
+%	\item Emerging ETF have greater serial correlation than the developed markets
+%	\item This may be partly asynchronous activity 
+%		\begin{itemize}
+%			\item but some markets are the same time zone - Mexico 
+%			\item some correlations remain for three or four days
+%		\end{itemize}
+%	\item There may be \emph{liquidity spill-overs}
+%		\begin{itemize}
+%			\item demand for ETF creates need to create new units of the underlying, adding liquidity in that market
+%		\end{itemize}
+%\end{itemize}
+%\end{frame}
 % here may be more to say here.  Page 353 of ETF5.  Illiquidity can affect the premium. 
 
 \begin{frame}{Market efficiency}
@@ -911,22 +921,7 @@ plot(da$x, da$XIV, type = 'l', xlab = "Date", main = "XIV ETF 2015 to Feb 2018",
 @
 \end{frame}
 
-\section{The Future}
-\begin{frame}{The Future}
-\end{frame}
-
-\begin{frame}{Cryptocurrency}
-	There is attention on the possibility that two new fads could be combined for a cryptocurrency ETF
-\begin{itemize}[<+-| alert@+>]
-		\pause
-	\item Aug 22 2018 the SEC rejected nine application for listing Bitcoin ETFs 
-	\item SEC claimed that the products did not comply with Exchange Act Section g(b)5 that requires that exchange rules are designed to prevent "fraudulent and manipulative acts and practices"
-	\item The first attempt by Winkevoss in March 2017 was rejected due to the "largely unregulated nature of the BTE markets"
-\end{itemize}
-\end{frame}
-
 \section{Factor investment}
-\section{Smart beta}
 \begin{frame}{Criticisms of index investment}
 There are a number of persistent criticisms of using traditional indices as the basis for investment
 \begin{itemize}[<+-| alert@+>]
@@ -1252,7 +1247,7 @@ These are for government and corporate sectors
 Though lagging equities, increased money has been drawn into bond ETFs this year.  According to Morningstar 
 \begin{itemize}[<+-| alert@+>]
 \pause
-\item Bond ETFs atttracted \$66.8bn of new business in the first 6 months of 2018 (ETFGI)
+\item Bond ETFs attracted \$66.8bn of new business in the first 6 months of 2018 (ETFGI)
 \item Bond ETFs attracted \$142bn in 2017 (\$117bn in 2016) 
 \item Rising rate environment is challenging
 \item There remains interest in floating rate, short maturity and emerging market bond ETFs
@@ -1260,7 +1255,7 @@ Though lagging equities, increased money has been drawn into bond ETFs this year
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Criticisms of Smart Beta and Factor Investment}
+\begin{frame}{Criticisms of Factor Investment}
 There are a number of criticism of Smart Beta 
 \begin{itemize}[<+-| alert@+>]
 \pause
@@ -1305,7 +1300,7 @@ R. Arnott studied performance of factors before and after publication
 
 \begin{frame}{Economist and the one hundred dollar bill}
 \begin{center}
-\includegraphics[scale = 0.1]{oneHundredDollar}
+\includegraphics[scale = 0.3]{oneHundredDollar}
 \end{center}
 \end{frame}
 
@@ -1342,44 +1337,49 @@ R. Arnott studied performance of factors before and after publication
 %\end{frame}
 %
 
-\begin{frame}{Fickle Factors}
-How resilient are these factors? 
+\begin{frame}{Fickle Factors?}
+	What is the source or the factor \emph{excess return}?
 \begin{itemize}[<+-| alert@+>]
-\pause
-\item What is the source of the factor \emph{excess return}?
-\begin{itemize}
-\item Increased risk
-\item Inefficiency
-\begin{itemize}
-\item behavioural
-\item institutional
-\end{itemize}
-\end{itemize}
-\item Will the returns continue? 
+		\pause
+	\item Inefficiency
+		\begin{itemize}
+			\item behavioural
+			\item institutional 
+		\end{itemize}
+	\item Risk
+		\begin{itemize}
+			\item hidden risk not captured by standard deviation or other quantitative measures
+			\item \emph{Crash risk} for example
+			\item risk that can be safely managed
+		\end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Factor source 1}
-\begin{table}
-\begin{center}
-\rowcolors{1}{MyBrown!20}{MyBrown!5}
-\begin{tabular}{l l l}
-\textbf{Factor} & \textbf{Risk} & \textbf{Behavr-Instit}\\
-\hline
-\textbf{Value} & Systematic risk & Expectation error\\
-      &                 & Loss aversion\\
-      &                 & Investment flows\\
-\textbf{Size}  & Systematic risk & Expectation error\\
-      & Liquidity risk   & \\
-\textbf{Momentum} & Crash risk & Over-reaction\\
-        &             & Investment flows\\
-        &             & Asynchronous trade\\
-\end{tabular}
-\end{center}
-\end{table}
+\begin{frame}{Infrastructure}
+\includegraphics[scale = 0.9]{tyne_bridge}
+\end{frame}
+
+%\begin{frame}{Factor source 1}
+%\begin{table}
+%\begin{center}
+%\rowcolors{1}{MyBrown!20}{MyBrown!5}
+%\begin{tabular}{l l l}
+%\textbf{Factor} & \textbf{Risk} & \textbf{Behavr-Instit}\\
+%\hline
+%\textbf{Value} & Systematic risk & Expectation error\\
+%      &                 & Loss aversion\\
+%      &                 & Investment flows\\
+%\textbf{Size}  & Systematic risk & Expectation error\\
+%      & Liquidity risk   & \\
+%\textbf{Momentum} & Crash risk & Over-reaction\\
+%        &             & Investment flows\\
+%        &             & Asynchronous trade\\
+%\end{tabular}
+%\end{center}
+%\end{table}
 %Adapted from MSCI \emph{Foundations of Factor Investment}
 
-\end{frame}
+%\end{frame}
 
 \begin{frame}{Factor source 2}
 \begin{table}
@@ -1650,10 +1650,10 @@ Environmental, social and governance
 \end{frame}
 
 \begin{frame}{ESG Pressure}
-	California has intrduced legislation to require funds (Calpers and Calsters) to explain how they are managing climate risk
+	California has introduced legislation to require funds (Calpers and Calsters) to explain how they are managing climate risk
 	\pause
 	\begin{block}{}
-		"the effects of the changing climate, such as intense storms, rising sea levels, higher global temperatures, economic damages from carbon emissions, and other financial transition risks due to public policies to address climant change, shifting consumer attitudes, changing economics of traditional carbon-intense industries"
+		"the effects of the changing climate, such as intense storms, rising sea levels, higher global temperatures, economic damages from carbon emissions, and other financial transition risks due to public policies to address climate change, shifting consumer attitudes, changing economics of traditional carbon-intense industries"
 	\end{block}
 \end{frame}
 
@@ -1683,7 +1683,7 @@ Environmental, social and governance
 \end{frame}
 
 \begin{frame}{Turbulence: climate}
-	Investors are paying increased attention to risks linked to fossile fuels
+	Investors are paying increased attention to risks linked to fossil fuels
 	\pause
 \begin{itemize}[<+-| alert@+>]
 	\item Which companies benefit from changes in regulation and consumer demand
@@ -1716,7 +1716,7 @@ Environmental, social and governance
 	\pause
 \begin{itemize}[<+-| alert@+>]
 	\item Climate change mitigation
-	\item Climate change adaption
+	\item Climate change adoption
 	\item Natural Resource conservation
 	\item Biodiversity conservation 
 	\item Pollution prevention and control
@@ -1908,16 +1908,26 @@ Ang, Goetzmann and Schaefer (2009) find the following factors explain the active
 \end{tikzpicture}
 \end{frame} 
 
-\begin{frame}{Concluding Thoughts}
+\begin{frame}{Concluding THoughts}
 \begin{itemize}[<+-| alert@+>]
-		\item ETF are a revolution in finance 
-\begin{itemize}
-\item Cost, liquidity and flexibility
+	\item The passive-active dichotomy is false
+		\begin{itemize}
+			\item passive strategies require active decision-making
+				\begin{itemize}
+					\item asset selection
+					\item dynamic factor allocation
+					\item benchmarking market portolio and liabilities
+				\end{itemize}
+			\item active cost of active investment can be reduced with more systematic focus
+				\begin{itemize}
+					\item use of ETF
+					\item identifcation of active factors
+				\end{itemize}
+		\end{itemize}
+	\item There is value in providing benchmarking, standardisation and leadership
 \end{itemize}
-		\item Some of the long-term effects on liquidity, corporate governance and price discovery are as yet unclear
-		\item The evolution that targets factors in fixed income and areas of ESG re-blurs the lines between active and passive investment
-	\end{itemize}
 \end{frame}
+
 
 %\begin{frame}{Final Thoughts}
 %	International investment involves asset owners making decisions about
@@ -2016,7 +2026,7 @@ and Wermers (2011)
 	\item Mishra (2012)
 	\item Berger and Warnock (2003)
 	\item Polwitoon and Tawatnuntachai (2006)
-	\item French and Poterba, (1991), Diversificatioin and International Equity Markets, The American Economic Review, 81, 2, 222-226
+	\item French and Poterba, (1991), Diversification and International Equity Markets, The American Economic Review, 81, 2, 222-226
 	\end{itemize}
 	\end{frame}
 
@@ -2026,7 +2036,6 @@ and Wermers (2011)
 \end{center}
 \end{frame}
 
-\
 
 \end{document}
 
