@@ -18,7 +18,7 @@
 %\usepackage{adjustbox}
 \tikzstyle{block} = [rectangle, rounded corners, minimum width=3cm, 
   minimum height= 2cm, text centered, text width = 2.8cm, draw = black, fill = brown!40]
-\tikzstyle{shape1} = [circle, minimum width = 1.2cm, fill = brown!40, text centered, 
+\tikzstyle{shape1} = [circle, minimum width = 3.0cm, fill = brown!40, text centered, 
 text width = 1.4cm, draw = black]
 \tikzstyle{arrow} = [thick, ->, >=stealth]
 \tikzstyle{arrow2} = [thick, <->, >=stealth]
@@ -242,8 +242,26 @@ legend('topleft', legend = c('Skew', 'Normal'), col = c('black', 'darkgreen'), l
 \end{itemize}
 \end{frame}
 
-\begin{frame}{BoA: calm and crisis}
-	This will be a BoA chart with price and returns
+\begin{frame}{BoA: calm and crisis: 1}
+<<BoA1, fig.height=4.6, echo=FALSE, warning=FALSE>>=	
+# BoA charts
+da <- read.csv('../Data/bac.csv')
+da$Date <- as.Date(da$Date, format = "%d/%m/%Y")
+plot(da$Date, da$BAC, type = 'l', main = "Bank of American Share Price", 
+     xlab = "Year", ylab = "Price")
+@
+\end{frame}
+
+\begin{frame}{BoA: calm and crisis: 2}
+<<BoA2, fig.height=4.6, echo=FALSE, warning=FALSE>>=	
+# BoA charts
+da <- read.csv('../Data/bac.csv')
+da$Date <- as.Date(da$Date, format = "%d/%m/%Y")
+da$BACl <- c(da$BAC[2:length(da$BAC)], rep(NA, 1))
+da$BACR <- da$BAC/da$BACl -1
+plot(da$Date, da$BACR, type = 'l', main = "Bank of American Return", 
+     xlab = "Year", ylab = "Return") 
+@
 \end{frame}
 
 \begin{frame}{Mixture}
@@ -260,6 +278,23 @@ plot(x, fs(x, -0.4, 1), type = 'l', col = 'darkgreen', main = 'Distribution with
 lines(x, fs(x, 0, 1.5), type = 'l', lty = 2)
 legend('topleft', legend = c('Calm', 'Crisis'), col = c('black', 'darkgreen'), lty = c(2, 1))
 @
+\end{frame}
+
+\begin{frame}{Forecasting regimes}
+	The St.Louis Fed has used this method to update its forecasting tools so that forecasts are contingent upon different regimes
+\begin{table}
+\begin{center}
+\rowcolors{1}{MyBrown!20}{MyBrown!5}
+\begin{tabular}{l r r r}
+ & \textbf{Productivity} & \textbf{RealReturn} & \textbf{Cycle}\\
+\hline
+High/low & & &\\
+High/low & & &\\
+Boom/Recession & & & \\
+\end{tabular}
+\end{center}
+\end{table}
+This gives most likely growth estimates and rsks to that forecasts based on the probability that there is a regime-switch
 \end{frame}
 
 \begin{frame}{Unknown unknowns}
@@ -530,30 +565,30 @@ For the physical ETF
 %\node at (6, 8) {Stage Two};
 %\node at (10, 8) {Stage Three};
 % main blocks
-\node at (6, 7) [block] {Swap Counterparty};  
-\node at (1, 3.8) [block] {Authorised Participant};  
-\node at (10, 5) [shape1]{Collateral Basket};
-\node at (6, 3.8) [block] {ETF};  
+\node at (6.2, 7.5) [block] {Swap Counterparty};  
+\node at (1, 4.3) [block] {Authorised Participant};  
+\node at (11.0, 5.0) [shape1]{Collateral Basket};
+\node at (6.2, 4.3) [block] {ETF};  
 %\node at (10, 1) [block] {Swap Counterparty 2};  
-\node at (6, 1) [block] {Retail and Institutional Investors};  
-\node at (1, 1) [block] {Exchange};  
+\node at (6.2, 1.0) [block] {Retail and Institutional Investors};  
+\node at (1, 1.0) [block] {Exchange};  
 % the arrows
 % Interest rate swap
-\draw [arrow] (7.5, 4) -- node[below right, distance = 3cm] {Cash} (9, 5);
-\draw [arrow] (9, 5) -- node[above right] {Return on collateral} (7.5, 7);
+\draw [arrow] (7.8, 4.1) -- node[below] {Cash} (9.5, 4.8);
+\draw [arrow] (9.5, 4.8) -- node[above right, text width=2cm, align=center] {Return on collateral} (7.8, 7.9);
 %\draw [arrow] (6, 6.0) -- node[left] {Variable rate cash} (6, 4.8);
 % Creatiom units 
-%\draw [arrow] (4.5, 4) -- node[above] {Index Return} (2.5, 4);
-\draw [arrow] (2.5, 3.8) -- node[below] {Cash} (4.5, 3.8);
+\draw [arrow] (4.6, 4.0) -- node[above, text width=2cm, align=center] {Index Return} (2.6, 4);
+\draw [arrow] (2.6, 3.8) -- node[below] {Cash} (4.6, 3.8);
 % AP arbitrage
-\draw [arrow2] (1, 1.9) -- node[left] {Cash} (1, 2.8);
-\draw [arrow2] (1.2, 1.9) -- node[right] {ETF} (1.2, 2.8);
+\draw [arrow2] (1, 2.0) -- node[left] {Cash} (1, 3.3);
+\draw [arrow2] (1.2, 2.0) -- node[right] {ETF} (1.2, 3.3);
 % Secondary market
-\draw [arrow2] (2.5, 1.2) -- node[above] {ETF} (4.5, 1.2);
-\draw [arrow2] (2.5, 0.8) -- node[below] {Cash} (4.5, 0.8);
+\draw [arrow2] (2.6, 1.2) -- node[above] {ETF} (4.6, 1.2);
+\draw [arrow2] (2.6, 0.8) -- node[below] {Cash} (4.6, 0.8);
 % Return swap
-\draw [arrow] (7.5, 2.9) -- node[above right, distance = 2cm] {Variable rate cash} (10.1, 2.0);
-\draw [arrow] (9.5, 2) -- node[left] {Index return} (7, 2.8);
+%\draw [arrow] (7.5, 2.9) -- node[above right, distance = 2cm] {Variable rate cash} (10.1, 2.0);
+\draw [arrow] (6.5, 6.5) -- node[left] {Index return} (6.5, 5.3);
 \endscope
 \end{tikzpicture}
 %\caption{Synthetic ETF: Primary and Secondary markets: Researve Bank of Australia (March 2011 Bulletin)}
@@ -656,7 +691,7 @@ da$Date <- as.Date(da$Date, format = "%Y-%m-%d")
 	\item leverage can make funds vulnerable
 	\item leverage can cause \emph{feedback loops}
 \end{itemize}
-	\item The evidence from cast studies below is not that positive
+	\item The evidence from case studies below is not that positive
 \end{itemize}
 \end{frame}
 
@@ -1356,7 +1391,7 @@ R. Arnott studied performance of factors before and after publication
 \end{frame}
 
 \begin{frame}{Infrastructure}
-\includegraphics[scale = 0.9]{tyne_bridge}
+\includegraphics[scale = 0.2]{tyne_bridge}
 \end{frame}
 
 %\begin{frame}{Factor source 1}
@@ -1381,24 +1416,24 @@ R. Arnott studied performance of factors before and after publication
 
 %\end{frame}
 
-\begin{frame}{Factor source 2}
-\begin{table}
-\begin{center}
-\rowcolors{1}{MyBrown!20}{MyBrown!5}
-\begin{tabular}{l p{3cm} l}
-\textbf{Factor} & \textbf{Risk} & \textbf{Behavr-Instit}\\
-\hline
-\textbf{Low vol} & Borrowing Constraint          & Lottery effect\\
-        &             & Overconfidence\\
-        &             & Leverage aversion\\
-\textbf{Quality} & NA          & Expectations errors\\
-        &             & Manipulated earnings\\
-\end{tabular}
-\end{center}
-\end{table}
-Adapted from MSCI \emph{Foundations of Factor Investment}
-
-\end{frame}
+%\begin{frame}{Factor source% 2}
+%\begin{table%}
+%\begin{cente%r}
+%\rowcolors{1%}{MyBrown!20}{MyBrown!5}
+%\begin{tabul%ar}{l p{3cm} l}
+%\textbf{Factor} & \textbf{Risk} & \textbf{Behavr-Instit}\\
+%\hline
+%\textbf{Low vol} & Borrowing Constraint          & Lottery effect\\
+%        &             & Overconfidence\\
+%        &             & Leverage aversion\\
+%\textbf{Quality} & NA          & Expectations errors\\
+%        &             & Manipulated earnings\\
+%\end{tabular}
+%\end{center}
+%\end{table}
+%Adapted from MSCI \emph{Foundations of Factor Investment}
+%
+%\end{frame}
 
 \section{Other portfolio construction methods}
 \begin{frame}{Assets as bundles of risk}
@@ -1608,9 +1643,9 @@ lines(x, y, col = "DarkGreen")
 \begin{frame}{Equity risk premium}
 The equity risk premium is the return required for taking risk.
 \begin{block}{}
-\begin{equation}
+\begin{equation*}
 ERP = R_e - R_{rf} \quad \text{or} \quad R_e - R_b
-\end{equation}
+\end{equation*}
 \end{block}
 Where $ERP$ is the equity risk premium; $R_e$ is the return on equity; $R_fr$ is the risk-free return and $R_b$ is the return on bonds. 
 \end{frame}
@@ -1632,31 +1667,6 @@ Where $ERP$ is the equity risk premium; $R_e$ is the return on equity; $R_fr$ is
 %\end{itemize}
 %\end{frame}
 %
-\begin{frame}{ESG}
-Environmental, social and governance
-\begin{itemize}[<+-| alert@+>]
-\pause
-\item An emerging factor?
-\item \$22.9tn in 2016
-\item 80\% of asset managers and asset owners surveyed by State Street said that they had some policy
-\item Problems
-\begin{itemize}
-\item benchmarking
-\item performance measurement
-\item moving from negative to positive features
-\end{itemize}
-\item United Nations Principles for Responsible Investing
-\end{itemize}
-\end{frame}
-
-\begin{frame}{ESG Pressure}
-	California has introduced legislation to require funds (Calpers and Calsters) to explain how they are managing climate risk
-	\pause
-	\begin{block}{}
-		"the effects of the changing climate, such as intense storms, rising sea levels, higher global temperatures, economic damages from carbon emissions, and other financial transition risks due to public policies to address climate change, shifting consumer attitudes, changing economics of traditional carbon-intense industries"
-	\end{block}
-\end{frame}
-
 \begin{frame}{ESG}
 	There has been increased attention to Environmental, Social and Governance issues in the investment community.  This appears to come from three main sources
 	\pause 
@@ -1682,6 +1692,41 @@ Environmental, social and governance
 \end{itemize}
 \end{frame}
 
+\begin{frame}{ESG}
+Environmental, social and governance
+\begin{itemize}[<+-| alert@+>]
+\pause
+\item An emerging factor?
+\item Estimated at over \$20tn in assets (GFI)
+\item 830\% of European fund managers believed that is was becoming more important (Shroders survey June 2018)
+\item Problems
+\begin{itemize}
+\item benchmarking
+\item performance measurement
+\item moving from negative to positive features
+\end{itemize}
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}{ESG Pressure}
+	There are requirements that funds take more notice of ETF issues
+\begin{itemize}[<+-| alert@+>]
+	\pause
+	\item California has introduced legislation to require funds (Calpers and Calsters) to explain how they are managing climate risk
+	\item UK DWP require pension funds to justify neglect of climate change and sustainability questions
+	\item Pressure on Cambridge and Harvard endowment funds
+	\item Deloitte estimate that \$24tn will be transferred to millennias in the next 15 years
+	\item United Nations Principles for Responsible Investing
+\end{itemize}
+\end{frame}
+
+\begin{frame}{California Requirement}
+	\begin{block}{}
+		"the effects of the changing climate, such as intense storms, rising sea levels, higher global temperatures, economic damages from carbon emissions, and other financial transition risks due to public policies to address climate change, shifting consumer attitudes, changing economics of traditional carbon-intense industries"
+	\end{block}
+\end{frame}
+
 \begin{frame}{Turbulence: climate}
 	Investors are paying increased attention to risks linked to fossil fuels
 	\pause
@@ -1705,24 +1750,22 @@ Environmental, social and governance
 			\item management of proceeds 
 			\item reporting
 		\end{itemize}
-	\item The Climate Bond Initiative: certify, advise and promote
-	\item There is increased competition from the issuance of social uses of funds
 	\item Issuance can create a conversation within companies
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Green bond uses}
-	ISMA sets out the projects that can be considered as the \emph{Five High Level Environmental Objectives}
-	\pause
-\begin{itemize}[<+-| alert@+>]
-	\item Climate change mitigation
-	\item Climate change adoption
-	\item Natural Resource conservation
-	\item Biodiversity conservation 
-	\item Pollution prevention and control
-\end{itemize}
-\end{frame}
-
+%\begin{frame}{Green bond uses}
+%	ISMA sets out the projects that can be considered as the \emph{Five High Level Environmental Objectives}
+%	\pause
+%\begin{itemize}[<+-| alert@+>]
+%	\item Climate change mitigation
+%	\item Climate change adoption
+%	\item Natural Resource conservation
+%	\item Biodiversity conservation 
+%	\item Pollution prevention and control
+%\end{itemize}
+%\end{frame}
+%
 \begin{frame}{ESG Challenges}
 	There are a number of challenges with ESG
 	\pause
@@ -1731,7 +1774,16 @@ Environmental, social and governance
 	\item Can \emph{active engagement} provide an offset or are there political constraints?
 	\item Who will win the battles to categorise and certificate?
 	\item Do ESG factors hide other factors?
+	\item Is it just marketing?
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Marketing?}
+	Thomas Hale, \emph{Someone is wrong on the internet}, FT
+	\pause
+	\begin{block}{}
+		The better explanation for the suggested relationship between higher returns and social responsibility is simple: it is a marketing strategy. This not only helps to attract inflows, but it helps to create demand for green assets that may not previously have existed.
+	\end{block}
 \end{frame}
 
 \begin{frame}{Do ESG factors hide other factors?}
@@ -1754,13 +1806,6 @@ There are trade-offs between exposure, returns and tracking errors
 \end{center}
 \end{frame}
 
-\begin{frame}{Marketing?}
-	Thomas Hale, \emph{Someone is wrong on the internet}, FT
-	\pause
-	\begin{block}{}
-		The better explanation for the suggested relationship between higher returns and social responsibility is simple: it is a marketing strategy. This not only helps to attract inflows, but it helps to create demand for green assets that may not previously have existed.
-	\end{block}
-\end{frame}
 
 \begin{frame}{Norwegian Petroleum Fund}
 Started in 1996 with NOK 40 bn passed \$1.0tn in Sep 2017 (NOK 8.2tn)
@@ -1908,7 +1953,7 @@ Ang, Goetzmann and Schaefer (2009) find the following factors explain the active
 \end{tikzpicture}
 \end{frame} 
 
-\begin{frame}{Concluding THoughts}
+\begin{frame}{Concluding Thoughts}
 \begin{itemize}[<+-| alert@+>]
 	\item The passive-active dichotomy is false
 		\begin{itemize}
@@ -1916,12 +1961,12 @@ Ang, Goetzmann and Schaefer (2009) find the following factors explain the active
 				\begin{itemize}
 					\item asset selection
 					\item dynamic factor allocation
-					\item benchmarking market portolio and liabilities
+					\item benchmarking market portfolio and liabilities
 				\end{itemize}
 			\item active cost of active investment can be reduced with more systematic focus
 				\begin{itemize}
 					\item use of ETF
-					\item identifcation of active factors
+					\item identification of active factors
 				\end{itemize}
 		\end{itemize}
 	\item There is value in providing benchmarking, standardisation and leadership
