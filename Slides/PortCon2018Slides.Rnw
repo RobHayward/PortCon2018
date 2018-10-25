@@ -17,8 +17,8 @@
 \usetikzlibrary{shapes.geometric, arrows}
 %\usepackage{adjustbox}
 \tikzstyle{block} = [rectangle, rounded corners, minimum width=3cm, 
-  minimum height= 2cm, text centered, text width = 2.8cm, draw = black, fill = brown!40]
-\tikzstyle{shape1} = [circle, minimum width = 3.0cm, fill = brown!40, text centered, 
+  minimum height= 2cm, text centered, text width = 2.8cm, draw = black, fill = brown!30]
+\tikzstyle{shape1} = [circle, minimum width = 3.0cm, fill = brown!30, text centered, 
 text width = 1.4cm, draw = black]
 \tikzstyle{arrow} = [thick, ->, >=stealth]
 \tikzstyle{arrow2} = [thick, <->, >=stealth]
@@ -41,7 +41,7 @@ text width = 1.4cm, draw = black]
   \end{frame}
 }
 % Title and author information
-\title{Portfolio Construction}
+\title{Portfolio Construction and Asset Allocation Techniques}
 \author{Rob Hayward}
 \date{November 2018}
 \begin{document}
@@ -192,7 +192,7 @@ fs = function(x, epsilon, delta){
   dnorm(sinh(delta*asinh(x) - epsilon)) * delta*cosh(delta*asinh(x) - 
     epsilon)/sqrt(1 + x^2)
 }
-plot(x, fs(x, 0, 1), type = 'l', col = 'darkgreen', main = 'Normal Distribution', 
+plot(x, fs(x, 0, 1), type = 'l', col = 'chocolate4', main = 'Normal Distribution', 
      xlab = 'Return', ylab = 'frequency', ylim = c(0, 0.6))
 # http://stats.stackexchange.com/questions/43482/transformation-to-increase-kurtosis-and-skewness-of-normal-r-v
 #lines(x, fs(x, 0, 1.5), type = 'l', lty = 3)
@@ -207,11 +207,11 @@ fs = function(x, epsilon, delta){
   dnorm(sinh(delta*asinh(x) - epsilon)) * delta*cosh(delta*asinh(x) - 
     epsilon)/sqrt(1 + x^2)
 }
-plot(x, fs(x, 0, 1), type = 'l', col = 'darkgreen', main = 'Distribution with Kurtosis', 
+plot(x, fs(x, 0, 1), type = 'l', col = 'chocolate4', main = 'Distribution with Kurtosis', 
      xlab = 'Return', ylab = 'frequency', ylim = c(0, 0.6))
 # http://stats.stackexchange.com/questions/43482/transformation-to-increase-kurtosis-and-skewness-of-normal-r-v
 lines(x, fs(x, 0, 1.5), type = 'l', lty = 2)
-legend('topleft', legend = c('Kurtosis', 'Normal'), col = c('black', 'darkgreen'), lty = c(2, 1))
+legend('topleft', legend = c('Kurtosis', 'Normal'), col = c('black', 'chocolate4'), lty = c(2, 1))
 #lines(x, fs(x, -0.4, 1), type = 'l', lty = 2)
 @
 \end{frame}
@@ -223,12 +223,12 @@ fs = function(x, epsilon, delta){
   dnorm(sinh(delta*asinh(x) - epsilon)) * delta*cosh(delta*asinh(x) - 
     epsilon)/sqrt(1 + x^2)
 }
-plot(x, fs(x, 0, 1), type = 'l', col = 'darkgreen', main = 'Distribution with Skew', 
+plot(x, fs(x, 0, 1), type = 'l', col = 'chocolate4', main = 'Distribution with Skew', 
      xlab = 'Return', ylab = 'frequency', ylim = c(0, 0.6))
 # http://stats.stackexchange.com/questions/43482/transformation-to-increase-kurtosis-and-skewness-of-normal-r-v
 #lines(x, fs(x, 0, 1.5), type = 'l', lty = 3)
 lines(x, fs(x, -0.4, 1), type = 'l', lty = 2)
-legend('topleft', legend = c('Skew', 'Normal'), col = c('black', 'darkgreen'), lty = c(2, 1))
+legend('topleft', legend = c('Skew', 'Normal'), col = c('black', 'chocolate4'), lty = c(2, 1))
 @
 \end{frame}
 
@@ -271,12 +271,12 @@ fs = function(x, epsilon, delta){
   dnorm(sinh(delta*asinh(x) - epsilon)) * delta*cosh(delta*asinh(x) - 
     epsilon)/sqrt(1 + x^2)
 }
-plot(x, fs(x, -0.4, 1), type = 'l', col = 'darkgreen', main = 'Distribution with mixture', 
+plot(x, fs(x, -0.4, 1), type = 'l', col = 'chocolate4', main = 'Distribution with mixture', 
      xlab = 'Return', ylab = 'frequency', ylim = c(0, 0.6))
 # http://stats.stackexchange.com/questions/43482/transformation-to-increase-kurtosis-and-skewness-of-normal-r-v
 #lines(x, fs(x, 0, 1.5), type = 'l', lty = 3)
 lines(x, fs(x, 0, 1.5), type = 'l', lty = 2)
-legend('topleft', legend = c('Calm', 'Crisis'), col = c('black', 'darkgreen'), lty = c(2, 1))
+legend('topleft', legend = c('Calm', 'Crisis'), col = c('black', 'chocolate4'), lty = c(2, 1))
 @
 \end{frame}
 
@@ -288,13 +288,12 @@ legend('topleft', legend = c('Calm', 'Crisis'), col = c('black', 'darkgreen'), l
 \begin{tabular}{l r r r}
  & \textbf{Productivity} & \textbf{RealReturn} & \textbf{Cycle}\\
 \hline
-High/low & & &\\
-High/low & & &\\
-Boom/Recession & & & \\
+& High & High & Boom\\
+& High & High & Recession	
 \end{tabular}
 \end{center}
 \end{table}
-This gives most likely growth estimates and rsks to that forecasts based on the probability that there is a regime-switch
+This gives most likely growth estimates and risks to that forecasts based on the probability that there is a regime-switch
 \end{frame}
 
 \begin{frame}{Unknown unknowns}
@@ -374,37 +373,37 @@ Active funds try to take advantage of apparent inefficiencies.  There are a rang
 \end{frame}
 
 
-\section{The ETF Revolution}
+\section{The ETF revolution}
 
 \begin{frame}{ETF Growth}
 <<ETFG, fig.height=4.6, echo=FALSE, warning=FALSE>>=
 da <- read.csv('../Data/ETFsize.csv')
-barplot(names.arg = da$Year, height = da$X, xlab = "Date", main = "The Increase In ETF Assets 2003 to 2017", ylab = "bn", col = 'Brown')	
+barplot(names.arg = da$Year, height = da$X, xlab = "Date", main = "The Increase In ETF Assets 2003 to 2017", ylab = "bn", col = 'chocolate4')	
 @
 \end{frame}
 
-\begin{frame}{Largest ETF funds}
-\begin{table}
-\begin{center}
-\rowcolors{1}{MyBrown!20}{MyBrown!5}
-\begin{tabular}{l r r r}
-\textbf{Symbol} & \textbf{Name} & \textbf{AUM} & \textbf{Vol}\\
-\hline
-SPY & SPDR S\&P 500 & 282b & 60.2m\\
-IVV & iShares core & 166b &  3.3m\\
-VTI & Vanguard Total Stock & 107b & 2.1m\\
-VOO & Vanguard S\&P 500 & 105b & 2.3m\\
-QQQ & Invesco tech & 74m & 32b\\
-VEA & Vanguard FT Developed & 71b & 8m\\
-EFA & iShares MSCI EAFE & 59b & 21m\\
-IEFA& iShares Core MSCI & 60b & 6m\\
-VWO & Vanguard Emerging & 58b & 13m\\
-\end{tabular}
-\end{center}
-\end{table}
-June 2018
-\end{frame}
-
+%\begin{frame}{Largest ETF funds}
+%\begin{table}
+%\begin{center}
+%\rowcolors{1}{MyBrown!20}{MyBrown!5}
+%\begin{tabular}{l r r r}
+%\textbf{Symbol} & \textbf{Name} & \textbf{AUM} & \textbf{Vol}\\
+%\hline
+%SPY & SPDR S\&P 500 & 282b & 60.2m\\
+%IVV & iShares core & 166b &  3.3m\\
+%VTI & Vanguard Total Stock & 107b & 2.1m\\
+%VOO & Vanguard S\&P 500 & 105b & 2.3m\\
+%QQQ & Invesco tech & 74m & 32b\\
+%VEA & Vanguard FT Developed & 71b & 8m\\
+%EFA & iShares MSCI EAFE & 59b & 21m\\
+%IEFA& iShares Core MSCI & 60b & 6m\\
+%VWO & Vanguard Emerging & 58b & 13m\\
+%\end{tabular}
+%\end{center}
+%\end{table}
+%June 2018
+%\end{frame}
+%
 \begin{frame}{Reasons for ETF growth}
 	Reasons for ETF growth
 	\pause
@@ -484,8 +483,6 @@ BOND&  Pimco active bond investment & 0.55\\
 \end{table}
 \end{frame}
 	
-\section{Mechanics of ETF}
-
 \begin{frame}{Different Types}
 	There are two standard models of the ETF: 
 	\pause
@@ -661,13 +658,11 @@ For the physical ETF
 <<MAGA, echo=FALSE, fig.height=4.6, fig.width=6.7, cache=TRUE>>=
 da <- read.csv('../Data/MAGA.csv')
 da$Date <- as.Date(da$Date, format = "%Y-%m-%d")
-  plot(da$Date, da[,5], type = 'l', main = "MAGA Performance", col = 'chocolate4', 
+  plot(da$Date, da[,5], type = 'l', main = "MAGA Performance", col = 'black', 
      xlab = "Year", ylab = "Price")
 @
 \end{frame}
 
-
-\section{Issues and questions}
 \begin{frame}{Liquidity and Leverage}
 	One of the great attractions of ETF is their \emph{liquidity}
 \begin{itemize}[<+-| alert@+>]
@@ -1096,7 +1091,6 @@ Composite &  9.32pp& 17.2\%& 0.28
 \end{table}
 \end{frame}
 
-\section{Factor investment}
 \begin{frame}{Factor investment}
 Fundamentally-weighted indices would tend to pick up the value and growth anomalies: Ang, Goetzmann and Schaefer (2009)
 \begin{itemize}[<+-| alert@+>]
@@ -1391,7 +1385,7 @@ R. Arnott studied performance of factors before and after publication
 \end{frame}
 
 \begin{frame}{Infrastructure}
-\includegraphics[scale = 0.2]{tyne_bridge}
+\includegraphics[scale = 0.1]{tyne_bridge}
 \end{frame}
 
 %\begin{frame}{Factor source 1}
@@ -1595,7 +1589,7 @@ Emerging issues
 <<money, echo=FALSE, fig.height=4.6, fig.width=6.7>>=
 da <- read.csv('../Data/Rate.csv', skip = 5)
 da$Date <- as.Date(da$Time.Period, format = "%Y-%m-%d")
-  plot(da$Date, da[,2], type = 'l', main = "US Official Interest Rate", col = 'chocolate4', 
+  plot(da$Date, da[,2], type = 'l', main = "US Official Interest Rate", col = 'black', 
      xlab = "Year", ylab = "Rate")
 @
 \end{frame}
@@ -1608,7 +1602,7 @@ da2$Date <- as.Date(da2$DATE, format =  "%Y-%m-%d")
 #  currency-or-dollar-values-to-millions-billions
 da2$WALCL <- round(da2$WALCL /1e6, 1)
 plot(da2$Date, da2$WALCL, type = 'l', main = "Total Assets of the 
-     US Federal Reserve", xlab = "Year", ylab = "Tn", col = "chocolate4")
+     US Federal Reserve", xlab = "Year", ylab = "Tn", col = "black")
 @
 \end{frame}
 
@@ -1621,10 +1615,10 @@ da2 <- da2[, c(1, dim(da2)[2])]
 da2$Date <- as.yearmon(da2$Date, format = "&Y.%m")
 plot(da2$Date, da2$CAPE, type = 'l', main = "CAPE 1871 to 2018", 
      ylab = "CAPE", xlab = "Year")
-text(1966, 26, "24.1 Jan 1966", col = "DarkGreen")
-text(2018, 36, "32.2", col = "DarkGreen")
-text(1925, 34, "32.6 Jan 1929", col = "DarkGreen")
-text(1982, 44, "44.2 Dec 1999", col = "DarkGreen")
+text(1966, 26, "24.1 Jan 1966", col = "black")
+text(2018, 36, "32.2", col = "black")
+text(1925, 34, "32.6 Jan 1929", col = "black")
+text(1982, 44, "44.2 Dec 1999", col = "black")
 @
 \end{frame}
 
@@ -1636,7 +1630,7 @@ colnames(da2) <- c("Date", "Yield")
 plot(da2, type = 'l', main = "US 10-year bond yield")
 y <- c(10, 1.0)
 x <- c(6085, 20050)
-lines(x, y, col = "DarkGreen")
+lines(x, y, col = "black")
 @
 \end{frame}
 
@@ -1650,6 +1644,38 @@ ERP = R_e - R_{rf} \quad \text{or} \quad R_e - R_b
 Where $ERP$ is the equity risk premium; $R_e$ is the return on equity; $R_fr$ is the risk-free return and $R_b$ is the return on bonds. 
 \end{frame}
 
+\begin{frame}{Emerging Economies}
+% latex table generated in R 3.4.4 by xtable 1.8-2 package
+% Thu Oct 25 11:38:02 2018
+\begin{table}[ht]
+\small
+\centering
+\rowcolors{1}{MyBrown!20}{MyBrown!9}
+\begin{tabular}{rrrr}
+  \hline
+  Country & FXDebt & LTFXDebt & STFXDebt \\ 
+  \hline
+Costa Rica & 1.00 & 0.91 & 0.09 \\ 
+Peru & 0.99 & 0.85 & 0.14 \\ 
+Ukraine & 0.98 & 0.84 & 0.14 \\ 
+Philippines & 0.97 & 0.82 & 0.16 \\ 
+Sri Lanka & 0.97 & 0.82 & 0.14 \\ 
+Colombia & 0.96 & 0.85 & 0.11 \\ 
+Turkey & 0.94 & 0.72 & 0.22 \\ 
+Croatia & 0.94 & 0.82 & 0.12 \\ 
+Chile & 0.92 & 0.80 & 0.11 \\ 
+Georgia & 0.91 & 0.79 & 0.12 \\ 
+Uruguay & 0.89 & 0.76 & 0.13 \\ 
+Kazakhstan & 0.88 & 0.88 & 0.00 \\ 
+Argentina & 0.87 & 0.59 & 0.28 \\ 
+Romania & 0.87 & 0.62 & 0.25 \\ 
+Hungary & 0.77 & 0.70 & 0.07 \\ 
+   \hline
+\end{tabular}
+\caption{IMF debt} 
+\end{table}
+\end{frame}	
+	
 %\begin{frame}{Machine Learning}
 %\begin{center}
 %  \includegraphics[scale = 1.0]{WC}
