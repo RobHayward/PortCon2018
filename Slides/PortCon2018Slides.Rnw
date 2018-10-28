@@ -17,8 +17,8 @@
 \usetikzlibrary{shapes.geometric, arrows}
 %\usepackage{adjustbox}
 \tikzstyle{block} = [rectangle, rounded corners, minimum width=3cm, 
-  minimum height= 2cm, text centered, text width = 2.8cm, draw = black, fill = brown!30]
-\tikzstyle{shape1} = [circle, minimum width = 3.0cm, fill = brown!30, text centered, 
+  minimum height= 2cm, text centered, text width = 2.8cm, draw = black, fill = brown!20]
+\tikzstyle{shape1} = [circle, minimum width = 3.0cm, fill = brown!20, text centered, 
 text width = 1.4cm, draw = black]
 \tikzstyle{arrow} = [thick, ->, >=stealth]
 \tikzstyle{arrow2} = [thick, <->, >=stealth]
@@ -375,7 +375,7 @@ Active funds try to take advantage of apparent inefficiencies.  There are a rang
 
 \section{The ETF revolution}
 
-\begin{frame}{ETF Growth}
+\begin{frame}{ETF growth}
 <<ETFG, fig.height=4.6, echo=FALSE, warning=FALSE>>=
 da <- read.csv('../Data/ETFsize.csv')
 barplot(names.arg = da$Year, height = da$X, xlab = "Date", main = "The Increase In ETF Assets 2003 to 2017", ylab = "bn", col = 'chocolate4')	
@@ -421,7 +421,7 @@ barplot(names.arg = da$Year, height = da$X, xlab = "Date", main = "The Increase 
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Failure of Active Management}
+\begin{frame}{Failure of active management}
 \begin{itemize}[<+-| alert@+>]
 \pause
 \item Many studies find that active managers are not successful on average
@@ -435,7 +435,7 @@ and Wermers (2011)
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Effective and efficient Vehicle}
+\begin{frame}{Effective and efficient vehicle}
 	They provide the best and open-ended and close-ended funds:
 	\pause
 \begin{itemize}[<+-| alert@+>]
@@ -483,7 +483,7 @@ BOND&  Pimco active bond investment & 0.55\\
 \end{table}
 \end{frame}
 	
-\begin{frame}{Different Types}
+\begin{frame}{Different types}
 	There are two standard models of the ETF: 
 	\pause
 \begin{itemize}[<+-| alert@+>]
@@ -532,16 +532,16 @@ For the physical ETF
 % Primary Market - creation
 \node at (6, 8.5) {\textbf{PRIMARY MARKET}}; 
 \node at (6, 8) {\textbf{Creation}}; 
-\draw [arrow] (3.5, 7) -- node[above] {Creation Unit} (8.5, 7);
-\draw [arrow] (8.5, 7.1) -- node[below] {Portfolio of Securities} (3.5, 7.1);
+\draw [arrow] (3.6, 7) -- node[above] {Creation Unit} (8.4, 7);
+\draw [arrow] (8.4, 7.1) -- node[below] {Portfolio of Securities} (3.6, 7.1);
 % Primary market - redemption
 \node at (6, 5.1) {\textbf{Redemption}}; 
-\draw [arrow] (3.5, 6) -- node[above] {Creation Unit} (8.5, 6);
-\draw [arrow] (8.5, 5.9) -- node[below] {Portfolio of Securities} (3.5, 5.9);
+\draw [arrow] (3.6, 6) -- node[above] {Creation Unit} (8.4, 6);
+\draw [arrow] (8.4, 5.9) -- node[below] {Portfolio of Securities} (3.6, 5.9);
 % Secondary Market
 \node at (6, 0.6) {\textbf{SECONDARY MARKET}}; 
-\draw [arrow2] (3.5, 2.5) -- node[above] {Cash} (8.5, 2.5);
-\draw [arrow2] (8.5, 2.0) -- node[below] {ETF} (3.5, 2.0);
+\draw [arrow2] (3.6, 2.5) -- node[above] {Cash} (8.4, 2.5);
+\draw [arrow2] (8.4, 2.0) -- node[below] {ETF} (3.6, 2.0);
 \endscope
 \end{tikzpicture}
 %\caption{\small{ETF: Primary and Secondary markets: Researve Bank of Australia (March 2011 Bulletin)}}
@@ -549,7 +549,7 @@ For the physical ETF
 \end{center}
 \end{frame}
 
-\begin{frame}{Synthetic ETF Structure}
+\begin{frame}{Synthetic ETF structure}
 \begin{center}
 \begin{figure}
 \begin{tikzpicture}
@@ -593,7 +593,7 @@ For the physical ETF
 \end{center}
 \end{frame}
 %
-\begin{frame}{Other Assets: Bonds}
+\begin{frame}{Other assets: bonds}
 	Bond ETF have followed equities
 	\pause
 \begin{itemize}[<+-| alert@+>]
@@ -607,7 +607,7 @@ For the physical ETF
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Other Assets: Commodities}
+\begin{frame}{Other assets: commodities}
 	Commodity ETF are also popular
 	\pause
 \begin{itemize}[<+-| alert@+>]
@@ -644,7 +644,7 @@ For the physical ETF
 \end{itemize}
 \end{frame}
 
-\begin{frame}{MAGA and EU-break up ETF}
+\begin{frame}{MAGA and EU-break up ETFs}
 \begin{center}
 \includegraphics[scale = 0.6]{trump}
 \end{center}
@@ -654,7 +654,7 @@ For the physical ETF
 \end{itemize}
 \end{frame}
 
-\begin{frame}{MAGA Performance}
+\begin{frame}{MAGA performance}
 <<MAGA, echo=FALSE, fig.height=4.6, fig.width=6.7, cache=TRUE>>=
 da <- read.csv('../Data/MAGA.csv')
 da$Date <- as.Date(da$Date, format = "%Y-%m-%d")
@@ -663,7 +663,7 @@ da$Date <- as.Date(da$Date, format = "%Y-%m-%d")
 @
 \end{frame}
 
-\begin{frame}{Liquidity and Leverage}
+\begin{frame}{Liquidity and leverage}
 	One of the great attractions of ETF is their \emph{liquidity}
 \begin{itemize}[<+-| alert@+>]
 		\pause
@@ -672,7 +672,7 @@ da$Date <- as.Date(da$Date, format = "%Y-%m-%d")
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Crisis Response}
+\begin{frame}{Crisis response}
 \begin{itemize}[<+-| alert@+>]
 	\pause
 	\item There is a concern that liquidity will disappear in a crisis
@@ -723,7 +723,7 @@ da$Date <- as.Date(da$Date, format = "%Y-%m-%d")
 Ackert and Tian (2008)
 \end{frame}
 
-\begin{frame}{International Fund Premium}
+\begin{frame}{International fund premium}
 \begin{table}
 \begin{center}
 \rowcolors{1}{MyBrown!20}{MyBrown!5}
@@ -744,7 +744,7 @@ S. Korean & 0.1545 & 1.3244 & 0.2229
 Ackert and Tian (2008)
 \end{frame}
 
-\begin{frame}{US, Developed and Emerging}
+\begin{frame}{US, developed and emerging}
 \begin{table}
 \begin{center}
 \rowcolors{1}{MyBrown!20}{MyBrown!5}
@@ -803,7 +803,7 @@ Ackert and Tian (2008)
 	\end{block}
 \end{frame}
 
-\begin{frame}{Evidence on Price Discovery}
+\begin{frame}{Evidence on price discovery}
 \begin{itemize}[<+-| alert@+>]
 	\item Glosten, Nallareddy and Zou (2016) find that stocks incorporate information more quickly once they are in an ETF
 	\item Werners and Xue (2015) successfully test their assertion that price movement caused by ETF is informed (permanent) while price movement led by securities is noise (transitory)
@@ -811,7 +811,7 @@ Ackert and Tian (2008)
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Corporate Governance}
+\begin{frame}{Corporate governance}
 	There is also a debate about the effect on corporate governance
 	\pause
 \begin{itemize}[<+-| alert@+>]
@@ -824,7 +824,7 @@ Ackert and Tian (2008)
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Experiments with Corporate Governance}
+\begin{frame}{Experiments with corporate governance}
 	How is the effect isolated?
 	\pause
 	\begin{block}{}
@@ -837,7 +837,7 @@ Ackert and Tian (2008)
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Crisis Performance}
+\begin{frame}{Crisis performance}
 \begin{block}{}
 There is concern that liquidity may disappear at times of crisis. There are two case studies to assess
 \end{block}
@@ -943,7 +943,7 @@ plot(dacrisis$Date, dacrisis$Adj.Close, type = 'l', xlab = "Date", ylab = "VIX i
 @
 \end{frame}
 
-\begin{frame}{XIV ETF Price}
+\begin{frame}{XIV ETF price}
 <<XIV, fig.height=4.6, echo=FALSE, warning=FALSE>>=
 da <- read.csv('../Data/XIV.csv')
 plot(da$x, da$XIV, type = 'l', xlab = "Date", main = "XIV ETF 2015 to Feb 2018", 
@@ -1058,7 +1058,7 @@ Annualised returns by decade.  Arnott, Hsu and More (2005)
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Comparison with capitalisation-weighted investment}
+\begin{frame}{Comparison with capitalisation-weighted}
 You have the advantages of the \emph{capitalisation-weighted} investment without the costs
 \begin{itemize}[<+-| alert@+>]
 \pause
@@ -1071,7 +1071,7 @@ You have the advantages of the \emph{capitalisation-weighted} investment without
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Comparison to Capitalisation-weighed index (2000-04)}
+\begin{frame}{Comparison to capitalisation-weighed index (2000-04)}
 %\begin{center}
 \rowcolors{1}{MyBrown!20}{MyBrown!5}
 \begin{table}
@@ -1284,7 +1284,7 @@ Though lagging equities, increased money has been drawn into bond ETFs this year
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Criticisms of Factor Investment}
+\begin{frame}{Criticisms of Factor investment}
 There are a number of criticism of Smart Beta 
 \begin{itemize}[<+-| alert@+>]
 \pause
@@ -1366,7 +1366,7 @@ R. Arnott studied performance of factors before and after publication
 %\end{frame}
 %
 
-\begin{frame}{Fickle Factors?}
+\begin{frame}{Fickle factors?}
 	What is the source or the factor \emph{excess return}?
 \begin{itemize}[<+-| alert@+>]
 		\pause
@@ -1501,7 +1501,7 @@ Other           & 5\% & Other & 5\% \\
 \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{Global Asset Allocation Shifts}
+\begin{frame}{Global asset allocation shifts}
 BIS paper by Kroenke, Schmeling and Schrimpf
 \begin{itemize}[<+-| alert@+>]
 \pause
@@ -1644,7 +1644,7 @@ ERP = R_e - R_{rf} \quad \text{or} \quad R_e - R_b
 Where $ERP$ is the equity risk premium; $R_e$ is the return on equity; $R_fr$ is the risk-free return and $R_b$ is the return on bonds. 
 \end{frame}
 
-\begin{frame}{Emerging Economies}
+\begin{frame}{Emerging economy vulnerability}
 % latex table generated in R 3.4.4 by xtable 1.8-2 package
 % Thu Oct 25 11:38:02 2018
 \begin{table}[ht]
@@ -1694,6 +1694,22 @@ Hungary & 0.77 & 0.70 & 0.07 \\
 %\end{frame}
 %
 \begin{frame}{ESG}
+Environmental, social and governance
+\begin{itemize}[<+-| alert@+>]
+\pause
+\item An emerging factor?
+\item Estimated at over \$20tn in assets (GFI)
+\item 830\% of European fund managers believed that is was becoming more important (Shroders survey June 2018)
+\item Problems
+\begin{itemize}
+\item benchmarking
+\item performance measurement
+\item moving from negative to positive features
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{ESG}
 	There has been increased attention to Environmental, Social and Governance issues in the investment community.  This appears to come from three main sources
 	\pause 
 \begin{itemize}[<+-| alert@+>]
@@ -1718,24 +1734,8 @@ Hungary & 0.77 & 0.70 & 0.07 \\
 \end{itemize}
 \end{frame}
 
-\begin{frame}{ESG}
-Environmental, social and governance
-\begin{itemize}[<+-| alert@+>]
-\pause
-\item An emerging factor?
-\item Estimated at over \$20tn in assets (GFI)
-\item 830\% of European fund managers believed that is was becoming more important (Shroders survey June 2018)
-\item Problems
-\begin{itemize}
-\item benchmarking
-\item performance measurement
-\item moving from negative to positive features
-\end{itemize}
 
-\end{itemize}
-\end{frame}
-
-\begin{frame}{ESG Pressure}
+\begin{frame}{ESG pressure}
 	There are requirements that funds take more notice of ETF issues
 \begin{itemize}[<+-| alert@+>]
 	\pause
@@ -1747,21 +1747,14 @@ Environmental, social and governance
 \end{itemize}
 \end{frame}
 
-\begin{frame}{California Requirement}
+\begin{frame}{Turbulence}
+\includegraphics[scale = 0.5]{storm}
+\end{frame}
+
+\begin{frame}{California requirement}
 	\begin{block}{}
 		"the effects of the changing climate, such as intense storms, rising sea levels, higher global temperatures, economic damages from carbon emissions, and other financial transition risks due to public policies to address climate change, shifting consumer attitudes, changing economics of traditional carbon-intense industries"
 	\end{block}
-\end{frame}
-
-\begin{frame}{Turbulence: climate}
-	Investors are paying increased attention to risks linked to fossil fuels
-	\pause
-\begin{itemize}[<+-| alert@+>]
-	\item Which companies benefit from changes in regulation and consumer demand
-	\item BlackRock, BNP Paribas and StateStree have ETF that hold low-carbon footprint companies
-	\item Many funds also look forward to those firms that will benefit in the future
-	\item Risk reduction and opportunity
-\end{itemize}
 \end{frame}
 
 \begin{frame}{Green bonds}
@@ -1792,7 +1785,7 @@ Environmental, social and governance
 %\end{itemize}
 %\end{frame}
 %
-\begin{frame}{ESG Challenges}
+\begin{frame}{ESG challenges}
 	There are a number of challenges with ESG
 	\pause
 \begin{itemize}[<+-| alert@+>]
@@ -1804,12 +1797,14 @@ Environmental, social and governance
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Marketing?}
-	Thomas Hale, \emph{Someone is wrong on the internet}, FT
-	\pause
-	\begin{block}{}
-		The better explanation for the suggested relationship between higher returns and social responsibility is simple: it is a marketing strategy. This not only helps to attract inflows, but it helps to create demand for green assets that may not previously have existed.
-	\end{block}
+\begin{frame}{Performance}
+<<Performance, fig.height=4.6, echo=FALSE, warning=FALSE>>=
+da <- read.csv('../Data/MSCI.csv', stringsAsFactors = FALSE)
+	plot(da$x, da$MSCI.ESG, type = 'l', main = "MSCI Emerging market Funds (index 2007)", xlab = "Year", ylab = "Price")
+	lines(da$x, da$MSCI, col = 'brown')
+	legend('topleft', inset = 0.02, legend = c("MSCI EM", "MSCI EM ESG"), 
+	       col = c('black', 'brown'), lty = 1)
+@
 \end{frame}
 
 \begin{frame}{Do ESG factors hide other factors?}
@@ -1823,6 +1818,15 @@ Environmental, social and governance
 \end{itemize}
 \pause
 There are trade-offs between exposure, returns and tracking errors
+\end{frame}
+
+
+\begin{frame}{Marketing?}
+	Thomas Hale, \emph{Someone is wrong on the internet}, FT
+	\pause
+	\begin{block}{}
+		The better explanation for the suggested relationship between higher returns and social responsibility is simple: it is a marketing strategy. This not only helps to attract inflows, but it helps to create demand for green assets that may not previously have existed.
+	\end{block}
 \end{frame}
 
 \section{Portfolio construction: decision-making}
@@ -1979,7 +1983,7 @@ Ang, Goetzmann and Schaefer (2009) find the following factors explain the active
 \end{tikzpicture}
 \end{frame} 
 
-\begin{frame}{Concluding Thoughts}
+\begin{frame}{Concluding thoughts}
 \begin{itemize}[<+-| alert@+>]
 	\item The passive-active dichotomy is false
 		\begin{itemize}
