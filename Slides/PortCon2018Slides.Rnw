@@ -282,6 +282,7 @@ legend('topleft', legend = c('Calm', 'Crisis'), col = c('black', 'chocolate4'), 
 
 \begin{frame}{Forecasting regimes}
 	The St.Louis Fed has used this method to update its forecasting tools so that forecasts are contingent upon different regimes
+\pause
 \begin{table}
 \begin{center}
 \rowcolors{1}{MyBrown!20}{MyBrown!5}
@@ -293,6 +294,7 @@ legend('topleft', legend = c('Calm', 'Crisis'), col = c('black', 'chocolate4'), 
 \end{tabular}
 \end{center}
 \end{table}
+\pause
 This gives most likely growth estimates and risks to that forecasts based on the probability that there is a regime-switch
 \end{frame}
 
@@ -1616,7 +1618,7 @@ da2$Date <- as.yearmon(da2$Date, format = "&Y.%m")
 plot(da2$Date, da2$CAPE, type = 'l', main = "CAPE 1871 to 2018", 
      ylab = "CAPE", xlab = "Year")
 text(1966, 26, "24.1 Jan 1966", col = "black")
-text(2018, 36, "32.2", col = "black")
+text(2018, 36, "31.5", col = "black")
 text(1925, 34, "32.6 Jan 1929", col = "black")
 text(1982, 44, "44.2 Dec 1999", col = "black")
 @
@@ -1699,7 +1701,7 @@ Environmental, social and governance
 \pause
 \item An emerging factor?
 \item Estimated at over \$20tn in assets (GFI)
-\item 830\% of European fund managers believed that is was becoming more important (Shroders survey June 2018)
+\item 83\% of European fund managers believed that it is becoming more important (Shroders survey June 2018)
 \item Problems
 \begin{itemize}
 \item benchmarking
@@ -1710,10 +1712,10 @@ Environmental, social and governance
 \end{frame}
 
 \begin{frame}{ESG}
-	There has been increased attention to Environmental, Social and Governance issues in the investment community.  This appears to come from three main sources
+	Increased attention to ESG appears to come from three main sources
 	\pause 
 \begin{itemize}[<+-| alert@+>]
-	\item Increased evidence that rather than returns vs ethics, ESG factors may help to improve performance
+	\item Evidence that rather than returns vs ethics, ESG factors may help to improve performance
 	\item Experience of ESG-related losses
 		\begin{itemize}
 			\item Banking and GFC
@@ -1742,7 +1744,7 @@ Environmental, social and governance
 	\item California has introduced legislation to require funds (Calpers and Calsters) to explain how they are managing climate risk
 	\item UK DWP require pension funds to justify neglect of climate change and sustainability questions
 	\item Pressure on Cambridge and Harvard endowment funds
-	\item Deloitte estimate that \$24tn will be transferred to millennias in the next 15 years
+	\item Deloitte estimate that \$24tn will be transferred to millennials in the next 15 years
 	\item United Nations Principles for Responsible Investing
 \end{itemize}
 \end{frame}
@@ -1753,7 +1755,7 @@ Environmental, social and governance
 
 \begin{frame}{California requirement}
 	\begin{block}{}
-		"the effects of the changing climate, such as intense storms, rising sea levels, higher global temperatures, economic damages from carbon emissions, and other financial transition risks due to public policies to address climate change, shifting consumer attitudes, changing economics of traditional carbon-intense industries"
+		``the effects of the changing climate, such as intense storms, rising sea levels, higher global temperatures, economic damages from carbon emissions, and other financial transition risks due to public policies to address climate change, shifting consumer attitudes, changing economics of traditional carbon-intense industries``
 	\end{block}
 \end{frame}
 

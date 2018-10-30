@@ -44,3 +44,4 @@ rsconnect/
 *.pdf
 *cache*
 *.dig
+*.xls
