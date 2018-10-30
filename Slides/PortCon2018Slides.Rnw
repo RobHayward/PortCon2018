@@ -433,6 +433,7 @@ and Wermers (2011)
 \item Morningstar: only 16.9\% of US large-growth managers were able to beat their passive counterparts over the 10 year period
 \end{itemize}
 \item Cost and fees are a major factor
+\item BIS only 8\% of European funds beat their benchmark in 2011-16
 \item There are exceptions
 \end{itemize}
 \end{frame}
@@ -768,7 +769,7 @@ Ackert and Tian (2008)
 \begin{itemize}[<+-| alert@+>]
 		\pause
 	\item Emerging ETF have wider dispersion of premia and discount so the average tends to be low
-	\item The relationship between liquidity and pricing may be non-linear (it may be U shaped)
+	\item The relationship between liquidity and pricing may be non-linear (it may be an inverted-U)
 	\item The relationship between liquidity and pricing may depend on the integration of the markets
 	\item There are fewer discounts because creating units is more costly than redeeming them
 \end{itemize}
@@ -803,6 +804,19 @@ Ackert and Tian (2008)
 	\begin{block}{}
 		Remember the 100 dollar bill and Grossman \& Stiglitz
 	\end{block}
+\end{frame}
+
+\begin{frame}{Equilibrium}
+\begin{tikzpicture}[scale = 1.9] %\draw[very thin, color = gray](0, 0) grid (5, 3);
+\draw [<->, thick] (0, 3) node (yaxis) [above] {Active return} 
+  |- (5, 0) node (xaxis) [right] {ETF share};
+\draw[dashed, color ={rgb: brown, 5; white, 1}] (0.0, 1.5) to (5.0, 1.5);
+\draw[domain = 0.0:5.0, color = {rgb: brown, 8; black, 2}] plot(\x, {0.1*\x + 0.1*\x^2});
+\node at (3.5, 1.4) [below right] {Equilibrium};
+\draw [fill = black] (3.4, 1.5) circle [radius = 0.05];
+\node at (2.4, 1.0) [left] {Growth of ETF};
+\node at (2.4, 2.3) [left] {Excess Active Return};
+\end{tikzpicture}
 \end{frame}
 
 \begin{frame}{Evidence on price discovery}
