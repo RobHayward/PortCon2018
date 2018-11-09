@@ -45,3 +45,5 @@ rsconnect/
 *cache*
 *.dig
 *.xls
+*.ppt
+*.pptx

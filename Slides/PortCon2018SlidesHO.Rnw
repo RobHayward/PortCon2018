@@ -1,4 +1,4 @@
-\documentclass[14pt,xcolor=pdftex,dvipsnames,table]{beamer}
+\documentclass[14pt,xcolor=pdftex,dvipsnames,table,handout]{beamer}
 
 % Specify theme
 \usetheme{Madrid}
@@ -413,12 +413,12 @@ barplot(names.arg = da$Year, height = da$X, xlab = "Date", main = "The Increase 
 	Reasons for ETF growth
 	\pause
 \begin{itemize}[<+-| alert@+>]
-\item ETF are a response to increased doubts about the benefits of active fund management
+\item They are a response to increased doubts about the benefits of active fund management
 \begin{itemize}
 \item performance of active managers
 \item fees
 \end{itemize}
-	\item ETF are an efficient vehicle for retail and professional investors
+	\item They are an efficient vehicle for retail and professional investors
 		\begin{itemize}
      \item they allow cheap access to a wide variety of diversified investments
 			\item their liquidity allows institutions to take large positions even when underlying liquidity may be more limited
@@ -629,11 +629,11 @@ For the physical ETF
 	The first of these ETF to promise positive or negative multiples of an index was created in 2006 in the US. 
 \begin{itemize}[<+-| alert@+>]
 		\pause
+	\item Charupat and Peter Miu, 2011
 	\item Mainly chosen by speculative accounts (average holding period is 14 days compared to over 40 for conventional ETF)
 	\item Much smaller amounts are traded (though the multiple means that smaller amounts can generate the same return)
 	\item They promise to track the \emph{daily} return, returns beyond 2 weeks vary substantially
 	\item Rebalancing is required by the fund each day to ensure that the daily return can be achieved
-	\item Charupat and Peter Miu, 2011
 \end{itemize}
 \end{frame}
 
@@ -656,7 +656,6 @@ For the physical ETF
 \includegraphics[scale = 0.6]{trump}
 \end{center}
 \begin{itemize}
-\pause
 \item Rank firms according to the way they benefit from GOP policy
 \item Long winners from EU breakup; short losers
 \end{itemize}
